@@ -14,7 +14,13 @@ import {
   useTheme,
 } from "@chakra-ui/system"
 import { callAll, cx, runIfFn, __DEV__ } from "@chakra-ui/utils"
-import { CustomDomComponent, motion, Variants } from "framer-motion"
+import {
+  CustomDomComponent,
+  m as motion,
+  LazyMotion,
+  domAnimation,
+  Variants,
+} from "framer-motion"
 import * as React from "react"
 import {
   MenuDescendantsProvider,
@@ -183,26 +189,28 @@ export const MenuList = forwardRef<MenuListProps, "div">((props, ref) => {
       {...positionerProps}
       __css={{ zIndex: props.zIndex ?? styles.list?.zIndex }}
     >
-      <MenuTransition
-        {...ownProps}
-        /**
-         * We could call this on either `onAnimationComplete` or `onUpdate`.
-         * It seems the re-focusing works better with the `onUpdate`
-         */
-        onUpdate={onTransitionEnd}
-        onAnimationComplete={callAll(
-          animated.onComplete,
-          ownProps.onAnimationComplete,
-        )}
-        className={cx("chakra-menu__menu-list", ownProps.className)}
-        variants={motionVariants}
-        initial={false}
-        animate={isOpen ? "enter" : "exit"}
-        __css={{
-          outline: 0,
-          ...styles.list,
-        }}
-      />
+      <LazyMotion features={domAnimation}>
+        <MenuTransition
+          {...ownProps}
+          /**
+           * We could call this on either `onAnimationComplete` or `onUpdate`.
+           * It seems the re-focusing works better with the `onUpdate`
+           */
+          onUpdate={onTransitionEnd}
+          onAnimationComplete={callAll(
+            animated.onComplete,
+            ownProps.onAnimationComplete,
+          )}
+          className={cx("chakra-menu__menu-list", ownProps.className)}
+          variants={motionVariants}
+          initial={false}
+          animate={isOpen ? "enter" : "exit"}
+          __css={{
+            outline: 0,
+            ...styles.list,
+          }}
+        />
+      </LazyMotion>
     </chakra.div>
   )
 })
