@@ -1,5 +1,21 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#6200](https://github.com/chakra-ui/chakra-ui/pull/6200)
+  [`104eead49`](https://github.com/chakra-ui/chakra-ui/commit/104eead495b2d5997beeb2bb797f4bc1d562f59e)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - - Extract and
+  export `getToken` function from `useToken`
+  - Improve parameter types for `useToken`
+
+### Patch Changes
+
+- Updated dependencies
+  [[`bd2683306`](https://github.com/chakra-ui/chakra-ui/commit/bd2683306db6af272c43982ecd947182bde8b727)]:
+  - @chakra-ui/color-mode@2.1.0
+
 ## 2.1.3
 
 ### Patch Changes

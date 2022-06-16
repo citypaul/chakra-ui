@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.0.0
+
+### Patch Changes
+
+- [#6196](https://github.com/chakra-ui/chakra-ui/pull/6196)
+  [`370f2db01`](https://github.com/chakra-ui/chakra-ui/commit/370f2db0116206373f02756ac4b4b1f3b9cf0151)
+  Thanks [@gausie](https://github.com/gausie)! - Move `@chakra-ui/system` to
+  peer dependency
+
+- Updated dependencies
+  [[`104eead49`](https://github.com/chakra-ui/chakra-ui/commit/104eead495b2d5997beeb2bb797f4bc1d562f59e)]:
+  - @chakra-ui/system@2.2.0
+
 ## 2.1.0
 
 ### Minor Changes

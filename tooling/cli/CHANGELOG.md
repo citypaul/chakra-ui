@@ -1,5 +1,14 @@
 # @chakra-ui/cli
 
+## 2.1.1
+
+### Patch Changes
+
+- [#6172](https://github.com/chakra-ui/chakra-ui/pull/6172)
+  [`a15f43ecc`](https://github.com/chakra-ui/chakra-ui/commit/a15f43eccf08054515f26aa33cae5992fca4d77e)
+  Thanks [@MYKEU](https://github.com/MYKEU)! - Fix issue where CLI crashed due
+  to lodash throttle dependency
+
 ## 2.1.0
 
 ### Minor Changes
